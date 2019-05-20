@@ -1,3 +1,20 @@
 {
-  
+  "data":[
+    {
+      "name": "Sachin Tendulakar",
+      "city": "Pune"
+    },
+    {
+      "name": "MS Dhoni",
+      "city": "Mumbai"
+    },
+    {
+      "name": "Nehra",
+      "city": "Pune"
+    },
+    {
+      "name": "Rohit",
+      "city": "Mumbai"
+    }
+  ]
 }
