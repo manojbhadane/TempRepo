@@ -1,0 +1,74 @@
+{
+  "data":[
+    {
+      "title_short": "SIP",
+      "title_long": "Systematic Investment Plan",
+      "description": [
+        "A Systematic Investment Plan (SIP) is an investment strategy offered by fund houses to investors, making it convenient to invest small sums of money in their mutual funds. The frequency of investment varies from weekly to monthly to quarterly.",
+        "Systematic investment plan is a convenient way for retail investors to participate in stockmarket growth.",
+        "Putting in smaller sums of money works better for investors as it is easy on the wallet and allows them to benefit from rupee cost averaging."
+      ],
+      "key_points": [
+        {
+          "title": "Time in the Market, Not Market-Timing",
+          "description": "A big concern that stops individuals from entering stockmarkets is wrong timing. They worry about getting the timing right so that they don’t end up entering high and selling low. Many investors do not return to stockmarkets for long periods of time, after being scarred with negative experiences."
+        },
+        {
+          "title": "Lower Average Purchase Cost",
+          "description": "Over a market upturn and downturn – also known as market cycle – SIPs lower the average purchase cost of investing. The ups and downs of equity markets work to the investor’s benefit over the long term."
+        },
+        {
+          "title": "Benefits of Compounding",
+          "description": "By investing regularly in equity markets through SIP, you can grow your wealth considerably over time. You can thank ‘compounding’ for this. Simply put, compounding means earning a return on return. By investing regularly in equities over longer time frames, investors give themselves a chance to benefit from one or more market cycles."
+        },
+        {
+          "title": "Affordable",
+          "description": "SIPs are convenient because they create a low entry point for investors looking at investing in equities. With an SIP amount as low as Rs 500/month, even a student with spare pocket money can start an SIP."
+        },
+        {
+          "title": "Innovation",
+          "description": "SIPs have seen considerable innovation over the years to facilitate greater investor participation. You can opt for direct bank account debit, daily/weekly/fortnightly/quarterly SIPs, set NAV limits, subscribe to NAV alerts and so on."
+        },
+        {
+          "title": "",
+          "description": ""
+        }
+      ]
+    },{
+      "title_short": "Sample",
+      "title_long": "this is sample",
+      "description": [
+        "sample 1",
+        "sample 2"
+      ],
+      "key_points": [
+        {
+          "title": "",
+          "description": ""
+
+        },
+        {
+          "title": "",
+          "description": ""
+        },
+        {
+          "title": "",
+          "description": ""
+        },
+        {
+          "title": "",
+          "description": ""
+        },
+        {
+          "title": "",
+          "description": ""
+        },
+        {
+          "title": "",
+          "description": ""
+        }
+      ]
+    }
+  ]
+
+}
