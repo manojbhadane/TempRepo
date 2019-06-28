@@ -1,0 +1,53 @@
+{
+  "data": [
+    {
+      "title": "What is your age?",
+      "option": [
+        
+      ],
+      "typeOfField": "age",
+      "description": "Clinical trials often have different age range criteria that determine who can take part.",
+      "submitTitle": "Submit",
+      "isSkipEnable": true
+    },
+    {
+      "title": "What is your gender?",
+      "option": [
+        "Male",
+        "Female",
+        "Other"
+      ],
+      "description": "Biological sex is often an eligibility criterion for clinical trials, which means that it may determine which trials you can take part in.",
+      "submitTitle": "Submit",
+      "typeOfField": "list",
+      "isSkipEnable": true
+    },
+    {
+      "title": "What is your preferred area for the clinical trial?",
+      "option": [
+        
+      ],
+      "description": "Clinical trials are normally run in hospitals or clinics and may require visits.",
+      "submitTitle": "Submit",
+      "typeOfField": "text",
+      "isSkipEnable": true
+    },
+    {
+      "title": "How far are you willing to travel?",
+      "option": [
+        "20",
+        "100",
+        "Any"
+      ],
+      "search": {
+        "hint": "",
+        "submitText": ""
+      },
+      "description": "Clinical trials are normally run in hospitals or clinics and may require visits.",
+      "submitTitle": "",
+      "typeOfField": "distance",
+      "isSkipEnable": true
+    }
+  ],
+  "isError": false
+}
