@@ -1,6 +1,7 @@
 {
   "data": [
     {
+      "id":"fc798f3e-8795-4514-860c-96a0609b82d6",
       "title": "What is your age?",
       "option": [
         
@@ -11,6 +12,7 @@
       "isSkipEnable": true
     },
     {
+      "id":"11a74b32-d0cd-4899-a782-35e7e8324bae",      
       "title": "What is your gender?",
       "option": [
         "Male",
@@ -23,6 +25,7 @@
       "isSkipEnable": true
     },
     {
+      "id":"45a63208-10d5-4758-bacb-6a5260a50dad",      
       "title": "What is your preferred area for the clinical trial?",
       "option": [
         
@@ -33,6 +36,7 @@
       "isSkipEnable": true
     },
     {
+      "id":"2061ca7d-71e5-43b0-9fd7-30a568566887",      
       "title": "How far are you willing to travel?",
       "option": [
         "20",
