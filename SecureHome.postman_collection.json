@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "cb7c24a7-c26b-483a-8318-1c6c0f74c65f",
+		"name": "SecureHome",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Member",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "7a4c31f4-9eaf-4978-ba23-68e94f364e28",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"contact_no\": \"4402868688\",\n    \"email\": \"gqqjg@fg.bmh\",\n    \"flat_id\": \"884224f5-feea-4927-b98b-b98c184728ec\",\n    \"is_active\": 1,\n    \"name\": \"ghg\",\n    \"password\": \"vyfyfyv\",\n    \"photo_url\": \"https://raw.githubusercontent.com/manojbhadane/Social-Icons/master/medium-icon.png\",\n    \"society_id\": \"3684250a-d6c6-42b1-9198-28716662c8da\",\n    \"user_type\": \"Owner\"\n}"
+				},
+				"url": {
+					"raw": "http://ec2-52-66-171-18.ap-south-1.compute.amazonaws.com/user",
+					"protocol": "http",
+					"host": [
+						"ec2-52-66-171-18",
+						"ap-south-1",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"user"
+					]
+				},
+				"description": "http://ec2-52-66-171-18.ap-south-1.compute.amazonaws.com/user"
+			},
+			"response": []
+		},
+		{
+			"name": "Get  Member",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "7a4c31f4-9eaf-4978-ba23-68e94f364e28",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://ec2-52-66-171-18.ap-south-1.compute.amazonaws.com/members/3684250a-d6c6-42b1-9198-28716662c8da",
+					"protocol": "http",
+					"host": [
+						"ec2-52-66-171-18",
+						"ap-south-1",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"members",
+						"3684250a-d6c6-42b1-9198-28716662c8da"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": ""
+						}
+					]
+				},
+				"description": "http://ec2-52-66-171-18.ap-south-1.compute.amazonaws.com/members/3684250a-d6c6-42b1-9198-28716662c8da"
+			},
+			"response": []
+		}
+	]
+}
