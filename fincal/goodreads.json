@@ -1,6 +1,8 @@
 {
   "data": [
     {
+      "credit": "D.Muthukrishnan",
+      "creditLink": "https://google.com",
       "text": "Big money is made when you buy high growth, ROCE at low P/E. Hero Moto (Hero Honda in those days) was quoting at 0.5x sales with decades of growth ahead Today @nooreshtech tweeted few names at 20-30x sales, crazy P/E and yet ppl feel good buying them",
       "imageUrl": "https://raw.githubusercontent.com/manojbhadane/TempRepo/master/fincal/17d2e472-5e41-4ee7-80dd-a0325dce933b.jpeg",
       "links": [
@@ -15,6 +17,8 @@
       ]
     },
     {
+      "credit": "LifeMathMoney",
+      "creditLink": "https://google.com",
       "text": "Big money is made when you buy high growth, ROCE at low P/E. Hero Moto (Hero Honda in those days) was quoting at 0.5x sales with decades of growth ahead Today @nooreshtech tweeted few names at 20-30x sales, crazy P/E and yet ppl feel good buying them",
       "imageUrl": "https://raw.githubusercontent.com/manojbhadane/TempRepo/master/fincal/17d2e472-5e41-4ee7-80dd-a0325dce933b.jpeg",
       "links": [
@@ -29,9 +33,12 @@
       ]
     },
     {
+      "credit": "Route 2 FI",
+      "creditLink": "https://google.com",
       "text": "",
       "imageUrl": "https://raw.githubusercontent.com/manojbhadane/TempRepo/master/fincal/c9b2fa89-c19c-4f35-9dc7-8cbf37a71f6d.jpeg",
       "links": [
+        
       ]
     }
   ]
