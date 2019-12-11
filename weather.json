@@ -1,0 +1,43 @@
+{
+  "today": {
+    "temp": "25°",
+    "comment": "Partly cloudy"
+  },
+  "data": [
+    {
+      "day": "Monday",
+      "temp": "25°",
+      "comment": "Partly cloudy"
+    },
+    {
+      "day": "Tuesday",
+      "temp": "35°",
+      "comment": "Sunny"
+    },
+    {
+      "day": "Wednesday",
+      "temp": "22°",
+      "comment": "Cold"
+    },
+    {
+      "day": "Thursday",
+      "temp": "25°",
+      "comment": "Partly cloudy"
+    },
+    {
+      "day": "Friday",
+      "temp": "30°",
+      "comment": "Sunny"
+    },
+    {
+      "day": "Saturday",
+      "temp": "25°",
+      "comment": "Partly cloudy"
+    },
+    {
+      "day": "Sunday",
+      "temp": "20°",
+      "comment": "Cold"
+    }
+  ]
+}
