@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!--Fonts-->
+    <dimen name="font_large">22sp</dimen>
+    <dimen name="font_medium">16sp</dimen>
+    <dimen name="font_small">12sp</dimen>
+
+
+
+    <dimen name="L_BtnMargin">40dp</dimen>
+
+    <!--Navigation-->
+    <dimen name="navigation_drawer_width">240dp</dimen>
+    <dimen name="drawer_row_textsize">14sp</dimen>
+    <dimen name="drawer_row_height">48dp</dimen>
+    <dimen name="drawer_row_icon_size">30dp</dimen>
+    <dimen name="drawer_vertical_bar_width">5dp</dimen>
+    <dimen name="drawer_item_icon_margin_left">10dp</dimen>
+    <dimen name="drawer_item_name_margin_end">16dp</dimen>
+    <dimen name="drawer_item_name_margin_left">5dp</dimen>
+    <dimen name="drawer_item_name_margin_right">16dp</dimen>
+    <dimen name="drawer_item_name_margin_start">10dp</dimen>
+    <dimen name="drawer_drawable_padding">16dp</dimen>
+
+    <!--Screen-->
+    <dimen name="screen_marginLRTB">10dp</dimen>
+    <dimen name="screen_marginLR">10dp</dimen>
+    <dimen name="screen_marginTB">10dp</dimen>
+    <dimen name="screen_marginT">10dp</dimen>
+    <dimen name="screen_marginB">10dp</dimen>
+
+    <!--CardView-->
+    <dimen name="card_corner_radious">3dp</dimen>
+    <dimen name="card_elevation">0dp</dimen>
+    <dimen name="card_margin">20dp</dimen>
+    <dimen name="card_marginLR">20dp</dimen>
+    <dimen name="card_result_padding">10dp</dimen>
+
+    <!--Button-->
+    <dimen name="btn_margin">10dp</dimen>
+    <dimen name="btn_marginB">10dp</dimen>
+    <dimen name="btn_marginL">50dp</dimen>
+    <dimen name="btn_marginR">50dp</dimen>
+    <dimen name="btn_marginT">10dp</dimen>
+
+</resources>
