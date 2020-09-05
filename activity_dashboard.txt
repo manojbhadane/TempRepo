@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="1200dp"
+            android:layout_height="500dp"
+            android:layout_marginLeft="-130dp"
+            android:layout_marginTop="-130dp"
+            android:layout_marginRight="-50dp"
+            android:background="@drawable/circle_shape_view_1"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:layout_marginLeft="-130dp"
+            android:layout_marginTop="-130dp"
+            android:background="@drawable/circle_shape_view"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.drawerlayout.widget.DrawerLayout
+                android:id="@+id/drawer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:id="@+id/toolbar"
+                        style="@style/ToolBarStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorPrimary"
+                        android:minHeight="@dimen/abc_action_bar_default_height_material">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.financecalculator.custom.CustomTextView
+                                android:id="@+id/txtFinance"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Fincal"
+                                android:textColor="@color/whiteColor"
+                                android:textSize="20sp"
+                                app:fontName="Bold" />
+
+                            <com.financecalculator.custom.CustomTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:text="calculator"
+                                android:textColor="@color/whiteColor"
+                                android:textSize="20sp"
+                                android:visibility="gone" />
+                        </LinearLayout>
+
+                    </androidx.appcompat.widget.Toolbar>
+
+                    <FrameLayout
+                        android:id="@+id/container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/toolbar" />
+
+                </RelativeLayout>
+
+                <fragment
+                    android:id="@+id/fragment_drawer"
+                    android:name="com.financecalculator.NavDrawer.Nav_DrawerFragment"
+                    android:layout_width="@dimen/navigation_drawer_width"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start"
+                    app:layout="@layout/fragment_navigation_drawer" />
+
+            </androidx.drawerlayout.widget.DrawerLayout>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</layout>

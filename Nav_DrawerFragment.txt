@@ -1,0 +1,171 @@
+package com.financecalculator.NavDrawer;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+
+import com.financecalculator.BuildConfig;
+import com.financecalculator.R;
+import com.financecalculator.custom.CustomTextView;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+public class Nav_DrawerFragment extends androidx.fragment.app.Fragment implements DrawerCallbacks {
+
+    private RecyclerView mDrawerList;
+    private DrawerCallbacks mCallbacks;
+    private DrawerLayout mDrawerLayout;
+    private View mFragmentContainerView;
+    private int mCurrentSelectedPosition;
+    private ActionBarDrawerToggle mActionBarDrawerToggle;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
+
+        mDrawerList = view.findViewById(R.id.drawerList);
+        CustomTextView mTxtBuild = view.findViewById(R.id.txtBuild);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        layoutManager.setOrientation(RecyclerView.VERTICAL);
+        mDrawerList.setLayoutManager(layoutManager);
+        mDrawerList.setHasFixedSize(true);
+
+        final List<NavigationItem> navigationItems = getMenu();
+        Nav_adapter adapter = new Nav_adapter(getActivity(), navigationItems);
+        adapter.setNavigationDrawerCallbacks(Nav_DrawerFragment.this);
+        mDrawerList.setAdapter(adapter);
+
+        mTxtBuild.setText("Build v" + BuildConfig.VERSION_NAME);
+
+//        RelativeLayout lay_profile = (RelativeLayout) view.findViewById(R.id.lay_profile);
+//        TextView txtUserName = (TextView) view.findViewById(R.id.txtUserName);
+//        TextView txtUserEmail = (TextView) view.findViewById(R.id.txtUserEmail);
+
+        selectItem(mCurrentSelectedPosition);
+//        selectItem(-1);
+
+        return view;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            mCallbacks = (DrawerCallbacks) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException("Activity must implement NavigationDrawerCallbacks.");
+        }
+
+    }
+
+    public void setup(int fragmentId, DrawerLayout drawerLayout, Toolbar toolbar) {
+        mFragmentContainerView = getActivity().findViewById(fragmentId);
+        mDrawerLayout = drawerLayout;
+        mActionBarDrawerToggle = new ActionBarDrawerToggle(getActivity(), mDrawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close) {
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView);
+                if (!isAdded()) return;
+                getActivity().invalidateOptionsMenu();
+            }
+
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                hideSoftKeyboard();
+                if (!isAdded()) return;
+                getActivity().invalidateOptionsMenu();
+            }
+        };
+
+        mDrawerLayout.post(new Runnable() {
+            @Override
+            public void run() {
+                mActionBarDrawerToggle.syncState();
+            }
+        });
+
+//        mDrawerLayout.setDrawerListener(mActionBarDrawerToggle);
+        mDrawerLayout.addDrawerListener(mActionBarDrawerToggle);
+
+    }
+
+    public void openDrawer() {
+        mDrawerLayout.openDrawer(mFragmentContainerView);
+    }
+
+    public void closeDrawer() {
+        mDrawerLayout.closeDrawer(mFragmentContainerView);
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mCallbacks = null;
+    }
+
+    public List<NavigationItem> getMenu() {
+        List<NavigationItem> items = new ArrayList<NavigationItem>();
+        items.add(new NavigationItem(getResources().getString(R.string.navhome), getResources().getDrawable(R.drawable.abc_btn_radio_material), R.string.icon_home));
+        items.add(new NavigationItem(getResources().getString(R.string.navcontact_us), getResources().getDrawable(R.drawable.abc_btn_radio_material), R.string.icon_envelope_solid));
+        items.add(new NavigationItem(getResources().getString(R.string.navprivacy_policy), getResources().getDrawable(R.drawable.abc_btn_radio_material), R.string.icon_passport_solid));
+//        items.add(new NavigationItem(getResources().getString(R.string.navsettings), getResources().getDrawable(R.drawable.abc_btn_radio_material), R.string.icon_setting));
+        items.add(new NavigationItem(getResources().getString(R.string.navexit), getResources().getDrawable(R.drawable.abc_btn_radio_material), R.string.icon_sign_out_alt_solid));
+
+        return items;
+    }
+
+    void selectItem(int position) {
+        mCurrentSelectedPosition = position;
+        if (mDrawerLayout != null) {
+            mDrawerLayout.closeDrawer(mFragmentContainerView);
+        }
+        if (mCallbacks != null) {
+            mCallbacks.onNavigationDrawerItemSelected(position);
+        }
+
+        ((Nav_adapter) mDrawerList.getAdapter()).selectPosition(position);
+//        ((Nav_adapter) mDrawerList.getAdapter()).selectPosition(0);
+
+    }
+
+    public boolean isDrawerOpen() {
+        return mDrawerLayout != null && mDrawerLayout.isDrawerOpen(mFragmentContainerView);
+    }
+
+    @Override
+    public void onNavigationDrawerItemSelected(int position) {
+        selectItem(position);
+    }
+
+    public DrawerLayout getDrawerLayout() {
+        return mDrawerLayout;
+    }
+
+    public void setDrawerLayout(DrawerLayout drawerLayout) {
+        mDrawerLayout = drawerLayout;
+    }
+
+    public void hideSoftKeyboard() {
+        if (getActivity().getCurrentFocus() != null) {
+            InputMethodManager inputMethodManager = (InputMethodManager) getActivity().getSystemService(getActivity().INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
+        }
+    }
+}

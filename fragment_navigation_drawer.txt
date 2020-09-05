@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/nav_drawer_background"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/lay_profile"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:clickable="false"
+        android:gravity="center"
+        android:padding="10dp">
+
+        <com.financecalculator.custom.CustomTextView
+            android:id="@+id/txtUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Saving money, the wise choice"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="17sp"
+            app:fontName="Bold" />
+
+        <com.financecalculator.custom.CustomTextView
+            android:id="@+id/txtUserEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtUserName"
+            android:layout_marginTop="8dp"
+            android:text="Don’t be rash! Save your cash!"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="13sp"
+            app:fontName="Regular" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/lay_profile"
+        android:background="@color/light_gray" />
+
+    <androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/drawerList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/txtBuild"
+        android:layout_below="@+id/view"
+        android:layout_marginTop="15dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:scrollbars="vertical" />
+
+    <com.financecalculator.custom.CustomTextView
+        android:id="@+id/txtBuild"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_margin="10dp"
+        android:text="Build v1.1"
+        android:textSize="16sp"
+        app:fontName="Regular" />
+
+    <com.financecalculator.utils.IconView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="-100dp"
+        android:layout_marginBottom="-140dp"
+        android:rotation="45"
+        android:text="@string/icon_icon_bookmark"
+        android:textColor="@color/colorPrimary"
+        android:textSize="250sp"
+        android:visibility="gone" />
+</RelativeLayout>

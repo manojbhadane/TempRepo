@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/drawer_row_height">
+
+    <View
+        android:id="@+id/bar"
+        android:layout_width="@dimen/drawer_vertical_bar_width"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:background="#FBCB07"
+        android:gravity="center_vertical" />
+
+    <TextView
+        android:id="@+id/icon"
+        android:layout_width="@dimen/drawer_row_icon_size"
+        android:layout_height="@dimen/drawer_row_icon_size"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/drawer_item_icon_margin_left"
+        android:layout_toRightOf="@+id/bar"
+        android:gravity="center_vertical"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp" />
+
+    <com.financecalculator.custom.CustomTextView
+        android:id="@+id/item_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/drawer_item_name_margin_start"
+        android:layout_marginLeft="@dimen/drawer_item_icon_margin_left"
+        android:layout_marginEnd="@dimen/drawer_item_name_margin_end"
+        android:layout_marginRight="@dimen/drawer_item_name_margin_right"
+        android:layout_toRightOf="@+id/icon"
+        android:alpha="0.87"
+        android:drawablePadding="@dimen/drawer_drawable_padding"
+        android:gravity="center_vertical"
+        android:textColor="@color/black"
+        android:textSize="@dimen/drawer_row_textsize"
+        app:fontName="Regular" />
+</RelativeLayout>

@@ -1,0 +1,115 @@
+package com.financecalculator.NavDrawer;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.financecalculator.R;
+import com.financecalculator.app.app;
+
+import java.util.List;
+
+import androidx.recyclerview.widget.RecyclerView;
+
+public class Nav_adapter extends RecyclerView.Adapter<Nav_adapter.ViewHolder>
+{
+
+    private List<NavigationItem> mData;
+    private DrawerCallbacks mDrawerCallbacks;
+    private int mSelectedPosition;
+    private int mTouchedPosition = -1;
+    private Context mContext;
+
+    public Nav_adapter(Context context, List<NavigationItem> data)
+    {
+        mData = data;
+        mContext = context;
+    }
+
+    public void setNavigationDrawerCallbacks(DrawerCallbacks drawerCallbacks)
+    {
+        mDrawerCallbacks = drawerCallbacks;
+    }
+
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i)
+    {
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.drawer_row, viewGroup, false);
+
+        return new ViewHolder(v);
+    }
+
+    @Override
+    public void onBindViewHolder(ViewHolder viewHolder, final int i)
+    {
+        viewHolder.textView.setText(mData.get(i).getText());
+        viewHolder.icon.setText(mContext.getResources().getString(mData.get(i).getmIcon()));
+        viewHolder.icon.setTypeface(app.getIcomoon());
+//        viewHolder.textView.setCompoundDrawablesWithIntrinsicBounds(mData.get(i).getDrawable(), null, null, null);
+
+
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener()
+                                               {
+                                                   @Override
+                                                   public void onClick(View v)
+                                                   {
+                                                       if (mDrawerCallbacks != null)
+                                                           mDrawerCallbacks.onNavigationDrawerItemSelected(i);
+                                                   }
+                                               }
+        );
+
+        if(i==0)
+            viewHolder.icon.setTextColor(mContext.getResources().getColor(R.color.pocket_color_3));
+        if(i==1)
+            viewHolder.icon.setTextColor(mContext.getResources().getColor(R.color.pocket_color_4));
+        if(i==2)
+            viewHolder.icon.setTextColor(mContext.getResources().getColor(R.color.pocket_color_7));
+        if(i==3)
+            viewHolder.icon.setTextColor(mContext.getResources().getColor(R.color.pocket_color_6));
+
+        if (mSelectedPosition == i || mTouchedPosition == i)
+        {
+//            viewHolder.textView.setTextColor(mContext.getResources().getColor(R.color.yellow));
+//            viewHolder.icon.setTextColor(mContext.getResources().getColor(R.color.yellow));
+//            viewHolder.itemView.setBackgroundColor(viewHolder.itemView.getContext().getResources().getColor(R.color.selection));
+            viewHolder.bar.setVisibility(View.VISIBLE);
+        } else
+        {
+//            viewHolder.textView.setTextColor(mContext.getResources().getColor(R.color.black));
+//            viewHolder.icon.setTextColor(mContext.getResources().getColor(R.color.colorPrimary));
+//            viewHolder.itemView.setBackgroundColor(Color.TRANSPARENT);
+            viewHolder.bar.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    public void selectPosition(int position)
+    {
+        int lastPosition = mSelectedPosition;
+        mSelectedPosition = position;
+        notifyItemChanged(lastPosition);
+        notifyItemChanged(position);
+    }
+
+    @Override
+    public int getItemCount()
+    {
+        return mData != null ? mData.size() : 0;
+    }
+
+    public static class ViewHolder extends RecyclerView.ViewHolder
+    {
+        public TextView textView, icon;
+        public View bar;
+
+        public ViewHolder(View itemView)
+        {
+            super(itemView);
+            textView = itemView.findViewById(R.id.item_name);
+            icon = itemView.findViewById(R.id.icon);
+            bar = itemView.findViewById(R.id.bar);
+        }
+    }
+}
